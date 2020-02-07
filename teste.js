@@ -1,5 +1,10 @@
-const pessoas = require('./teste.json')
-pessoas.JSON.parse
+"use strict";
 
+var dados = fetch("https://raw.githubusercontent.com/diegoss3d/prova/master/teste.json")
 
-console.log(pessoas)
+    .then(function(resp){
+        return resp.json();
+    })
+    .then(function(data){
+        console.log(data[0])
+    });
