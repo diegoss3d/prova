@@ -4,7 +4,9 @@ var done = document.querySelector('#welcome button')
 var boasVindas = document.querySelector('#welcome')
 var corpo = document.querySelector('#field')
 var ask = document.querySelector('#question')
-done.addEventListener('click', takeName)
+done.addEventListener('click', start)
+done.addEventListener('click', next)
+//done.addEventListener('click', btn_block)
 
 
 /*PEGAR QUESIONÁRIO JSON-----------------------------------------------------------------------*/
@@ -18,43 +20,49 @@ var questoes = fetch("https://raw.githubusercontent.com/diegoss3d/prova/master/q
     });
 
 
-function takeName(){
+function start(){
     nome = nomeInput.value;
-    boasVindas.style.display = "block";
-    var boasVindasAtribute = document.createAttribute('style')
-    boasVindasAtribute.value="style.display: block;";
-    boasVindas.setAttributeNode(boasVindasAtribute);
-    return renderQuestion();    
+    
+    if (nome.length == 0){
+        alert("ERRO! O campo 'nome' não pode estar vazio.")
+    }else{        
+        var boasVindasAtribute = document.createAttribute('style')
+        boasVindasAtribute.value="style.display: block;";
+        boasVindas.setAttributeNode(boasVindasAtribute);     
+        return renderImage(), next();
+    }
+
+/*function btn_block(){
+    document.done.disable = true
+}*/
+        
 }
 
 /*RENDERIZA A QUESTÃO--------------------------------------------------------------------------*/
 /*CRIAçÃO E AJUSTE DA ILUSTRAçÃO DA QUESTÃO*/
-function renderQuestion(takeName){
+function renderImage(){     
     var pos = 1
     var ilustracao = document.createElement('img');
     ilustracao.setAttribute('src', './imagens/1.png');
     ask.appendChild(ilustracao);
     var imgAtributo = document.createAttribute('style');
-    imgAtributo.value="margin-left: 50px; margin-top: 40px;";
+    imgAtributo.value="margin-left: 40%; margin-top: 40px;";
     ilustracao.setAttributeNode(imgAtributo);
+    }
+    
 
-    /*CRIAçÃO E AJUSTE DO BOTÃO AVANçAR*/
-    var avanca = document.createElement('button');
-    var botaoAtributo = document.createAttribute('style');
-    avanca.setAttributeNode(botaoAtributo);
-    ask.appendChild(avanca);
-    botaoAtributo.value="width: 120px; height: 40px; background-color: #bd2332; margin-left: 10%; margin-top: 20px;";
-    var textAvanca = document.createTextNode('Avançar')
-    avanca.appendChild(textAvanca)
-}
-
-
-function nextQuestion(){
+function next(){
+    var btn_next = document.createElement('button')
+    btn_next.setAttribute('id', 'next')
+    var btnNextAtributo = document.createAttribute('style')
+    corpo.appendChild(btn_next);
+    btnNextAtributo.value="width: 300px; height: 50px; background-color: #2f4c8c;";
+    btn_next.setAttributeNode(btnNextAtributo);
     
 }
 
 
+
+
+
 /*GERADOR DE QUESTÃO--------------------------------------------------------------------------*/
-function geraQuestao(){
-    var pos = 1
-}

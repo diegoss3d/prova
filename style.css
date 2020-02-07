@@ -16,24 +16,24 @@ a {text-decoration: none; color: inherit;}
 /*CORPO*/
 body{
     background-color: rgb(43, 43, 46);
-    font: normal 12pt Candara;
+    font: normal 16pt Candara;
 }
 
 /*CAMPO DO QUESTIONÁRIO*/
 #field{
     background-color: white;
-    width: 600px;
-    height: 700px;
+    width: 700px;
+    height: 800px;
     border-radius: 10px;
     margin: auto;
-    margin-top: 10%;
+    margin-top: 5%;
 }
 
 header{
     font: normal 14pt Candara;
     text-align: center;
     padding: 25px;
-    color: rgb(47, 76, 140);
+    color: #2f4c8c;
 }
 
 section div#welcome{
@@ -43,18 +43,22 @@ section div#welcome{
 
 /*INPUT NOME*/
 #welcome input{
-    width: 250px;
+    width: 275px;
     height: 30px;
-    color: rgb(47, 76, 140);
-    border-radius: 4px;
+    color: rgb(47, 76, 140); 
+    font: 18pt;   
     border-style: solid;
     border-color: rgb(189, 35, 50);
-    border-width: 2px;    
+    border-bottom-width: 1px;
+    border-top-width: 0;
+    border-right-width: 0;
+    border-left-width: 0;
 }
 
 
 /*BOTÃO*/
 #welcome button{
+    margin-left: 0;
     width: 80px;
     height: 30px;
     background-color: rgb(189, 35, 50);
