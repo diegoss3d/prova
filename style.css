@@ -1,0 +1,63 @@
+/*RESETANDO PADRÕES*/
+*, *:before, *:after {margin: 0; padding: 0; box-sizing: border-box; -webkit-box-sizing: border-box;}
+
+body {font-size: inherit;}
+
+input, select, iframe, button {border: none;}
+
+h1, h2, h3 {margin: 0; padding: 0;}
+
+ol, ul {list-style: nome;}
+
+a {text-decoration: none; color: inherit;}
+
+
+
+/*CORPO*/
+body{
+    background-color: rgb(43, 43, 46);
+    font: normal 12pt Candara;
+}
+
+/*CAMPO DO QUESTIONÁRIO*/
+#field{
+    background-color: white;
+    width: 600px;
+    height: 700px;
+    border-radius: 10px;
+    margin: auto;
+    margin-top: 10%;
+}
+
+header{
+    font: normal 14pt Candara;
+    text-align: center;
+    padding: 25px;
+    color: rgb(47, 76, 140);
+}
+
+section div#welcome{
+    display: flex;
+    padding-left: 40px;
+}
+
+/*INPUT NOME*/
+#welcome input{
+    width: 250px;
+    height: 30px;
+    color: rgb(47, 76, 140);
+    border-radius: 5px;
+    border-style: solid;
+    border-color: rgb(43, 43, 46);
+    border-width: 2px;
+}
+
+
+/*BOTÃO*/
+#welcome button{
+    width: 80px;
+    height: 30px;
+    background-color: rgb(43, 43, 46);
+    color: #ffffff;    
+    border-radius: 5px;    
+}
