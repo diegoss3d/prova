@@ -52,13 +52,17 @@ function renderImage(){
     
 
 function next(){
-    var btn_next = document.createElement('button')
-    btn_next.setAttribute('id', 'next')
+    var btn_next = document.querySelector('section #next')
     var btnNextAtributo = document.createAttribute('style')
     corpo.appendChild(btn_next);
-    btnNextAtributo.value="width: 300px; height: 50px; background-color: #2f4c8c;";
+    /*btnNextAtributo.value="width: 500px; height: 50px; background-color: #2f4c8c; margin-top: 60%; margin-left: 13%;";*/
+    btnNextAtributo.value="width: 700px; height: 50px; background-color: #2f4c8c; margin-top: 60%";
     btn_next.setAttributeNode(btnNextAtributo);
-    
+    var btn_text = document.createTextNode('Próxima');
+    var txtAtributo = document.createAttribute('style')
+    txtAtributo.value="color: #eceff3;";
+    btn_next.appendChild(btn_text)
+    btn_text.setAttribute(txtAtributo)
 }
 
 

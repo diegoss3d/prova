@@ -21,7 +21,7 @@ body{
 
 /*CAMPO DO QUESTIONÁRIO*/
 #field{
-    background-color: white;
+    background-color: hsl(0, 0%, 100%);
     width: 700px;
     height: 800px;
     border-radius: 10px;
