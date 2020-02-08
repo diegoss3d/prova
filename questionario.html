@@ -6,7 +6,7 @@
     <title>Teste</title>
 </head>
 <link rel="stylesheet" href="style_questionario.css">
-<body>
+<body onload="loadQuestion()">
     <section id="field">
         <header>
             <h1>Teste Prático</h1>
@@ -15,18 +15,18 @@
             <img src="./imagens/1.png" alt="">
         </div>        
         <aside>
-            1
+            <div id="bola">1</div>
         </aside>
         <div id="askText">
-            <p id="enunciado"></p>
+            <p id="enunciado">Pergunta</p>
             <p id="alt1">a</p>
             <p id="alt2">b</p>
             <p id="alt3">c</p>
             <p id="alt4">d</p>
             <p id="alt5">e</p>
         </div>
-        <div id="next"></div>
+        <button id="next">Avançar</button>
     </section>
-    
+    <script src="script_questionario.js"></script>
 </body>
 </html>

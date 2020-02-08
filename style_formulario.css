@@ -25,21 +25,29 @@ body{
     width: 600px;
     height: 600px;
     border-radius: 10px;
-    margin: auto;
-    margin-top: 10%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 header{
-    font: normal 18pt Candara;
-    text-align: center;
+    font: normal 18pt Candara;    
+    position: absolute;
+    top: 2%;
+    left: 50%;
+    transform: translate(-50%);
     padding: 25px;
     color: #2f4c8c;
 }
 
 section div#welcome{
     display: flex;
-    padding-left: 100px;
-    margin-top: 25%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
 }
 
 /*INPUT NOME*/
