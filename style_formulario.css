@@ -22,15 +22,15 @@ body{
 /*CAMPO DO QUESTIONÁRIO*/
 #field{
     background-color: hsl(0, 0%, 100%);
-    width: 700px;
-    height: 800px;
+    width: 600px;
+    height: 600px;
     border-radius: 10px;
     margin: auto;
-    margin-top: 5%;
+    margin-top: 10%;
 }
 
 header{
-    font: normal 14pt Candara;
+    font: normal 18pt Candara;
     text-align: center;
     padding: 25px;
     color: #2f4c8c;
@@ -38,15 +38,16 @@ header{
 
 section div#welcome{
     display: flex;
-    padding-left: 40px;
+    padding-left: 100px;
+    margin-top: 25%;
 }
 
 /*INPUT NOME*/
 #welcome input{
-    width: 275px;
-    height: 30px;
+    width: 320px;
+    height: 50px;
     color: rgb(47, 76, 140); 
-    font: 18pt;   
+    font-size: 18pt;   
     border-style: solid;
     border-color: rgb(189, 35, 50);
     border-bottom-width: 1px;
@@ -59,17 +60,22 @@ section div#welcome{
 /*BOTÃO*/
 #welcome button{
     margin-left: 0;
-    width: 80px;
-    height: 30px;
+    font-size: 12pt;
+    width: 100px;
+    height: 50px;  
     background-color: rgb(189, 35, 50);
     color: #ffffff;    
-    border-radius: 4px;    
+    border-radius: 4px;
+}
+
+#welcome a{
+    padding: 20px;
 }
 
 
-/*IMAGEM*/
-section div #ilustra{
-    padding-left: 20px;
-    margin: auto;
-    width: 500px;
+#welcome a{
+    padding: 20px;
 }
+
+
+
