@@ -1,20 +1,21 @@
 /*PEGAR QUESIONÁRIO JSON
 -----------------------------------------------------------------------*/
-var questoes = fetch("https://raw.githubusercontent.com/diegoss3d/prova/master/questoes.json")
-
-    .then(function(resp){
-        return resp.json();
-    })
-    .then(function(data){
-        console.log(data[2]["enunciado"])
-    });
 var corpo = document.getElementsByName('body')
 var btnNext = document.querySelector('#next')
-corpo.addEventListener('load', loadQuestion)
-var pergunta = document.querySelector('div #askText')
+var pergunta = document.querySelector('form #txtPergunta')
 
 
-function loadQuestion(){
-    pergunta.innerHTML = data[2]["enunciado"]
-}
+
+
+function loadQuestion(win, doc){
+    fetch('questoes.json').then(function(response) {
+        return response.json();
+    }).then(function (obj) {
+        console.log(obj[1]["enunciado"])
+        pergunta.innerHTML = `${obj[4]["enunciado"]}`
+    });
+
+    
+
+};
 

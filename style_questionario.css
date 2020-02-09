@@ -90,8 +90,18 @@ aside #bola{
     transition: 0.5s;
 }
 
-#askText{
+form{
     position: absolute;
-    top: 50%;
-    left: 20%;
+    top: 60%;
+    left: 25%;
+    transform: translate(-60%, -20%);
+    padding-top: 30px;
+}
+
+#txtPergunta{
+    position: absolute;
+    width: 450px;
+    top: -20%;
+    left: 30%;
+    transform: translate(-3%, -30%);
 }
