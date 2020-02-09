@@ -52,8 +52,8 @@ section img{
 aside{
     position: absolute;
     top: 50%;
-    left: 10%;
-    transform: translate(-50%, -10%);
+    left: 8%;
+    transform: translate(-50%, -8%);
     background-color: rgb(189, 35, 50);
     width: 50px;
     height: 50px;
@@ -92,16 +92,26 @@ aside #bola{
 
 form{
     position: absolute;
-    top: 60%;
-    left: 25%;
-    transform: translate(-60%, -20%);
+    top: 75%;
+    left: 80%;
+    width: 480px;
+    transform: translate(-80%, -75%);
     padding-top: 30px;
 }
 
 #txtPergunta{
     position: absolute;
     width: 450px;
-    top: -20%;
-    left: 30%;
-    transform: translate(-3%, -30%);
+    top: -35%;
+    color: #2f4c8c;   
 }
+
+
+/*form p{
+    position: absolute;
+    width: 450px;
+    top: 60%;
+    left: 25%;
+    transform: translate(-60%, -20%);
+    padding-top: 30px;
+} */

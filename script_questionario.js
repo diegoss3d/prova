@@ -1,32 +1,32 @@
-/*PEGAR QUESIONÁRIO JSON
------------------------------------------------------------------------*/
 var corpo = document.getElementsByName('body')
 /*var btnNext = document.querySelector('#next')*/
 var pergunta = document.querySelector('form #txtPergunta')
-var pos = 1;
+pos = 1
 console.log(pos)
 
-function aumentaPos(proximaQuestao){
-    pos += 1
-}
 
-
-
-
-
-
-function loadQuestion(){
+/*
+LER O ENUNCIADO
+ */
+function loadQuestion(proximaQuestao){
     fetch('questoes.json').then(function(response) {
         return response.json();
-    }).then(function (obj, proximaQuestao) {
-        /*var pos = 1;*/
-        var numPergunta = 1
-        console.log(obj[1]["enunciado"]);
-        pergunta.innerHTML = `${obj[pos]["enunciado"]}`
+    }).then(function (txtEnunciado) {
+        console.log(txtEnunciado[1]["enunciado"]);
+        pergunta.innerHTML = `${txtEnunciado[1]["enunciado"]}`
+    });  
+};
 
-        
-        var pontos = 0;
 
+
+/*
+VERIFICAR RESPOSTA DO USUÁRIO
+ */
+function respostaUser(proximaQuestao){
+    fetch('questoes.json').then(function(response) {
+        return response.json();
+    }).then(function (txtResposta) {
+        console.log(txtResposta[1]["correct"]);
         var abc = document.getElementsByName('option');
         var escolha = ''
 
@@ -41,29 +41,41 @@ function loadQuestion(){
         }else{
             escolha == 'e'
         };
-
-        console.log(obj[numPergunta]["correct"]);
-
-        var respostaCerta = obj[pos]["correct"];
+        
+        var respostaCerta = txtResposta[1]["correct"];
 
         if(escolha == respostaCerta){
-            pontos ++;
+            pontos += 1;
         };
+                
+    }); 
+}respostaUser()
+
+
+
+/*EXIBE ALTERNATIVAS*/
+var alternativa = document.getElementsByTagName('label')
+
+function renderAlternatives(proximaQuestao){
+    fetch('questoes.json').then(function(response) {
+        return response.json();
+    }).then(function (txtAlternativa) {        
+        alternativa[0].innerHTML += txtAlternativa[1]["alternativas"]["a"];
+        alternativa[1].innerHTML += txtAlternativa[1]["alternativas"]["b"];
+        alternativa[2].innerHTML += txtAlternativa[1]["alternativas"]["c"];
+        alternativa[3].innerHTML += txtAlternativa[1]["alternativas"]["d"];
+        alternativa[4].innerHTML += txtAlternativa[1]["alternativas"]["e"];    
+                
+    });
+}renderAlternatives()
+
+
+var btnAvancar = document.querySelector('button#next').addEventListener('click', proximaQuestao)
         
-
-
-    });  
-
+var acrescenta = (pos, incremento){
+    pos ++
 };
 
-
-
-var btnNext = document.querySelector('button#next').addEventListener('click', proximaQuestao)
-        
-
-        function proximaQuestao(pos){
-            pos += 1;
-            alert('Foi')
-        };
-        
-        proximaQuestao(aumentaPos())
+function proximaQuestao(){
+    alert(counter.add())
+}
