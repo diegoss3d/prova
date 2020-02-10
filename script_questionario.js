@@ -1,8 +1,9 @@
 var corpo = document.getElementsByName('body')
 var btnNext = document.querySelector('#next')
 var pergunta = document.querySelector('form #txtPergunta')
-var pos = 0;
-//console.log(next(pos))
+var ilustra = document.querySelector('div#ilustracao')
+var pos = 1;
+console.log(next())
 
 btnNext.addEventListener('click', next);
 
@@ -12,8 +13,8 @@ function next(){
     return pos
     
 }next();
-loadQuestion(pos);
-respostaUser(pos);
+//loadQuestion(pos);
+//respostaUser(pos);
 //renderAlternatives();
 
 
@@ -29,7 +30,7 @@ function loadQuestion(){
         console.log(txtEnunciado[pos]["enunciado"]);        
         pergunta.innerHTML = `${txtEnunciado[pos]["enunciado"]}`
         pergunta = ''
-    });  
+    }); next(pos)
 };
 
 
@@ -63,9 +64,9 @@ function respostaUser(){
         if(escolha == respostaCerta){
             pontos += 1;
         };
-         //next()       
+         next(pos)       
     }); 
-}respostaUser()
+}//respostaUser()
 
 
 
@@ -81,6 +82,33 @@ function renderAlternatives(){
         alternativa[2].innerHTML += txtAlternativa[pos]["alternativas"]["c"];
         alternativa[3].innerHTML += txtAlternativa[pos]["alternativas"]["d"];
         alternativa[4].innerHTML += txtAlternativa[pos]["alternativas"]["e"]; 
-        //next()       
+        next(pos)       
     });
-}renderAlternatives()
+}//renderAlternatives()
+
+
+function renderImage(){    
+    var ilustra = document.querySelector('img#ilustracao')
+    ilustra.setAttribute('id', 'foto')
+    if(pos == 1){        
+        document.querySelector('img#foto').src="./imagens/1.png";     
+    }else if(pos == 2){
+        document.querySelector('img#foto').src="./imagens/2.png";
+    }else if(pos == 3){
+        document.querySelector('img#foto').src="./imagens/3.png";
+    }else if(pos == 4){
+        document.querySelector('img#foto').src="./imagens/4.png";
+    }else if(pos == 5){
+        document.querySelector('img#foto').src="./imagens/5.png";
+    }else if(pos == 6){
+        document.querySelector('img#foto').src="./imagens/6.png";
+    }else if(pos == 7){
+        document.querySelector('img#foto').src="./imagens/7.png";
+    }else if(pos == 8){
+        document.querySelector('img#foto').src="./imagens/8.png";
+    }else if(pos == 9){
+        document.querySelector('img#foto').src="./imagens/9.png";
+    }else if(pos == 10){
+        document.querySelector('img#foto').src="./imagens/10.png";
+    }
+};
