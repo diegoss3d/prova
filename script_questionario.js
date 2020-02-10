@@ -2,18 +2,18 @@ var corpo = document.getElementsByName('body')
 var btnNext = document.querySelector('#next')
 var pergunta = document.querySelector('form #txtPergunta')
 var pos = 0;
-console.log(next(pos++))
+//console.log(next(pos))
 
 btnNext.addEventListener('click', next);
 
-function next(_loadQuestion, _respostaCerta, _renderAlternatives){
+function next(){
     pos++
-    //console.log(pos)
+    console.log(pos)
     return pos
     
 }next();
-loadQuestion();
-respostaUser();
+loadQuestion(pos);
+respostaUser(pos);
 //renderAlternatives();
 
 
@@ -25,7 +25,7 @@ function loadQuestion(){
     fetch('questoes.json').then(function(response) {
         return response.json();
     }).then(function (txtEnunciado) {
-        //next()
+        next(pos)
         console.log(txtEnunciado[pos]["enunciado"]);        
         pergunta.innerHTML = `${txtEnunciado[pos]["enunciado"]}`
         pergunta = ''
