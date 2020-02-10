@@ -1,19 +1,34 @@
 var corpo = document.getElementsByName('body')
-/*var btnNext = document.querySelector('#next')*/
+var btnNext = document.querySelector('#next')
 var pergunta = document.querySelector('form #txtPergunta')
-pos = 1
-console.log(pos)
+var pos = 0;
+console.log(next(pos++))
+
+btnNext.addEventListener('click', next);
+
+function next(_loadQuestion, _respostaCerta, _renderAlternatives){
+    pos++
+    //console.log(pos)
+    return pos
+    
+}next();
+loadQuestion();
+respostaUser();
+//renderAlternatives();
+
 
 
 /*
 LER O ENUNCIADO
  */
-function loadQuestion(proximaQuestao){
+function loadQuestion(){
     fetch('questoes.json').then(function(response) {
         return response.json();
     }).then(function (txtEnunciado) {
-        console.log(txtEnunciado[1]["enunciado"]);
-        pergunta.innerHTML = `${txtEnunciado[1]["enunciado"]}`
+        //next()
+        console.log(txtEnunciado[pos]["enunciado"]);        
+        pergunta.innerHTML = `${txtEnunciado[pos]["enunciado"]}`
+        pergunta = ''
     });  
 };
 
@@ -22,10 +37,11 @@ function loadQuestion(proximaQuestao){
 /*
 VERIFICAR RESPOSTA DO USUÁRIO
  */
-function respostaUser(proximaQuestao){
+function respostaUser(){
     fetch('questoes.json').then(function(response) {
         return response.json();
     }).then(function (txtResposta) {
+        //var pos = 1
         console.log(txtResposta[1]["correct"]);
         var abc = document.getElementsByName('option');
         var escolha = ''
@@ -47,7 +63,7 @@ function respostaUser(proximaQuestao){
         if(escolha == respostaCerta){
             pontos += 1;
         };
-                
+         //next()       
     }); 
 }respostaUser()
 
@@ -56,26 +72,15 @@ function respostaUser(proximaQuestao){
 /*EXIBE ALTERNATIVAS*/
 var alternativa = document.getElementsByTagName('label')
 
-function renderAlternatives(proximaQuestao){
+function renderAlternatives(){
     fetch('questoes.json').then(function(response) {
         return response.json();
     }).then(function (txtAlternativa) {        
-        alternativa[0].innerHTML += txtAlternativa[1]["alternativas"]["a"];
-        alternativa[1].innerHTML += txtAlternativa[1]["alternativas"]["b"];
-        alternativa[2].innerHTML += txtAlternativa[1]["alternativas"]["c"];
-        alternativa[3].innerHTML += txtAlternativa[1]["alternativas"]["d"];
-        alternativa[4].innerHTML += txtAlternativa[1]["alternativas"]["e"];    
-                
+        alternativa[0].innerHTML += txtAlternativa[pos]["alternativas"]["a"];
+        alternativa[1].innerHTML += txtAlternativa[pos]["alternativas"]["b"];
+        alternativa[2].innerHTML += txtAlternativa[pos]["alternativas"]["c"];
+        alternativa[3].innerHTML += txtAlternativa[pos]["alternativas"]["d"];
+        alternativa[4].innerHTML += txtAlternativa[pos]["alternativas"]["e"]; 
+        //next()       
     });
 }renderAlternatives()
-
-
-var btnAvancar = document.querySelector('button#next').addEventListener('click', proximaQuestao)
-        
-var acrescenta = (pos, incremento){
-    pos ++
-};
-
-function proximaQuestao(){
-    alert(counter.add())
-}
